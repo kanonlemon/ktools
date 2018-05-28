@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 *	Some computation utils
 *
 */
-const Ktools = require("../Ktools/Ktools");
+const Kcommon = require("../Kcommon/Kcommon");
 class Kmath {
     constructor() { }
     // cumprod: 	
@@ -62,7 +62,7 @@ class Kmath {
     // output   : [3,6,9,20,40,54]
     static add(array1, array2) {
         if (!Array.isArray(array2)) {
-            array2 = Ktools.Ktools.repeat(array2, array1.length);
+            array2 = Kcommon.Ktools.repeat(array2, array1.length);
         }
         let add = [];
         if (array1.length === array2.length) {
@@ -87,7 +87,7 @@ class Kmath {
     // output   : [2,2,2,4,7,8]
     static div(array1, array2) {
         if (!Array.isArray(array2)) {
-            array2 = Ktools.Ktools.repeat(array2, array1.length);
+            array2 = Kcommon.Ktools.repeat(array2, array1.length);
         }
         let div = [];
         if (array1.length === array2.length) {

@@ -5,7 +5,7 @@
 *	Some computation utils  
 *  
 */
-import Ktools = require("../Ktools/Ktools")
+import Kcommon = require("../Kcommon/Kcommon")
 
 export class Kmath {
     constructor() { }
@@ -65,7 +65,7 @@ export class Kmath {
     // output   : [3,6,9,20,40,54]
     static add(array1: Array<number>, array2: any): Array<number> {
         if (!Array.isArray(array2)) {
-            array2 = Ktools.Ktools.repeat(array2, array1.length)
+            array2 = Kcommon.Ktools.repeat(array2, array1.length)
         }
 
 
@@ -94,7 +94,7 @@ export class Kmath {
     // output   : [2,2,2,4,7,8]
     static div(array1: Array<number>, array2: any): Array<number> {
         if (!Array.isArray(array2)) {
-            array2 = Ktools.Ktools.repeat(array2, array1.length)
+            array2 = Kcommon.Ktools.repeat(array2, array1.length)
         }
 
         let div: Array<number> = [];

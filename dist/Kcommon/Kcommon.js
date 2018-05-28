@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 /*
 * @Author   ： Kanon
 * @Email    : wengxuan1992@hotmail.com
@@ -7,19 +7,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 *	Some easy tools
 *
 */
-class Ktools {
-    constructor() { }
+var Ktools = /** @class */ (function () {
+    function Ktools() {
+    }
     // repeat
     // input    :1 ,4
     // output   :[1, 1, 1, 1]
-    static repeat(t, times) {
-        let repeat = [];
+    Ktools.repeat = function (t, times) {
+        var repeat = [];
         times = Math.floor(times);
-        for (let i = 0; i < times; i++) {
+        for (var i = 0; i < times; i++) {
             repeat.push(t);
         }
         return repeat;
-    }
-}
+    };
+    return Ktools;
+}());
 exports.Ktools = Ktools;
 //# sourceMappingURL=Kcommon.js.map

@@ -31,6 +31,21 @@ class Kmath{
         return cumsum; 	
     } 		
     
+    // change
+    // input    : [1,2,3,4,5,6]
+    // output   : [0,1,1,1,1,1]
+    static change(array:Array<number>):Array<number>{ 		
+        let change:Array<number> = []; 		
+        array.reduce(function(accumulator:number, currentValue:number, currentIndex:number, array:Array<number>){ 
+            if(currentIndex===0){
+                accumulator = currentValue
+            }	
+            change.push(currentValue - accumulator); 			
+            return currentValue; 		
+        },0 ); 		
+        return change; 	
+    } 
+
     // percent_change: 	
     // input	: [1,2,3,4,5,6] 	
     // output	: [1,2,1.5,1.333, 1.25, 1.2] 	
@@ -43,3 +58,4 @@ class Kmath{
         return pct_change; 	
     } 
 }
+

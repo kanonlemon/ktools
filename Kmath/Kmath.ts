@@ -1,5 +1,3 @@
-
-
 /*  
 * @Author   ： Kanon  
 * @Email    : wengxuan1992@hotmail.com  
@@ -39,14 +37,9 @@ class Kmath{
     static pcg_change(array:Array<number>):Array<number>{ 		
         let pct_change:Array<number> = []; 		
         array.reduce(function(accumulator:number, currentValue:number, currentIndex:number, array:Array<number>){ 			
-            pct_change.push(currentValue / accumulator); 			
+            pct_change.push(currentValue / accumulator - 1); 			
             return currentValue; 		
         },1 ); 		
         return pct_change; 	
     } 
 }
-
-console.log(Kmath.pcg_change([1,2,3,4,4]))
-
-console.debug("hello world!")
-

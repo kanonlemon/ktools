@@ -30,10 +30,10 @@ class Kmath {
         }, 0);
         return cumsum;
     }
-    // pct_change: 	
+    // percent_change: 	
     // input	: [1,2,3,4,5,6] 	
     // output	: [1,2,1.5,1.333, 1.25, 1.2] 	
-    static pcg_change(array) {
+    static percent_change(array) {
         let pct_change = [];
         array.reduce(function (accumulator, currentValue, currentIndex, array) {
             pct_change.push(currentValue / accumulator - 1);

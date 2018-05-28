@@ -41,7 +41,7 @@ class Kmath {
             }
             change.push(currentValue - accumulator);
             return currentValue;
-        }, 0);
+        }, array[0]);
         return change;
     }
     // percent_change: 	
@@ -52,7 +52,7 @@ class Kmath {
         array.reduce(function (accumulator, currentValue, currentIndex, array) {
             pct_change.push(currentValue / accumulator - 1);
             return currentValue;
-        }, 1);
+        }, array[0]);
         return pct_change;
     }
 }

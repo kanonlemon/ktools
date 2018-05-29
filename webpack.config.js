@@ -1,32 +1,33 @@
 const path = require('path');
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'main.ts'),
+  entry: path.join(__dirname, 'src', 'main.ts'),
   output: {
-    filename: 'bundle.js',
+    filename: 'ktools.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [{
-      test: /.jsx?$/,
+      test: /\.tsx?$/,
       include: [
-        path.resolve(__dirname, 'app')
+        path.resolve(__dirname, 'src')
       ],
       exclude: [
         path.resolve(__dirname, 'node_modules'),
         path.resolve(__dirname, 'bower_components')
       ],
-      loader: 'babel-loader',
+      loader:  'awesome-typescript-loader',
       query: {
         presets: ['es2015']
       }
     }]
   },
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.css']
+    extensions: ['.ts', '.json', '.js', '.jsx', '.css']
   },
   devtool: 'source-map',
   devServer: {
+    inline: true,
     publicPath: path.join('/dist/')
   }
 };

@@ -1,27 +1,29 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 /*
 * @Author   ： Kanon
 * @Email    : wengxuan1992@hotmail.com
 * @Description:
-*	Some easy tools
+*	Some easy-deal tools
 *
 */
-var Ktools = /** @class */ (function () {
-    function Ktools() {
-    }
-    // repeat
-    // input    :1 ,4
-    // output   :[1, 1, 1, 1]
-    Ktools.repeat = function (t, times) {
-        var repeat = [];
-        times = Math.floor(times);
-        for (var i = 0; i < times; i++) {
-            repeat.push(t);
+var Kcommon;
+(function (Kcommon) {
+    class Kbase {
+        constructor() { }
+        // repeat
+        // input    :1 ,4
+        // output   :[1, 1, 1, 1]
+        static repeat(t, times) {
+            let repeat = [];
+            times = Math.floor(times);
+            for (let i = 0; i < times; i++) {
+                repeat.push(t);
+            }
+            return repeat;
         }
-        return repeat;
-    };
-    return Ktools;
-}());
-exports.Ktools = Ktools;
+    }
+    Kcommon.Kbase = Kbase;
+})(Kcommon || (Kcommon = {}));
+exports.Kcommon = Kcommon;
 //# sourceMappingURL=Kcommon.js.map

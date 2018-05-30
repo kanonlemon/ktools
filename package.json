@@ -17,5 +17,16 @@
     "typescript": "^2.8.3",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanonlemon/ktools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kanonlemon/ktools/issues"
+  },
+  "homepage": "https://github.com/kanonlemon/ktools#readme"
 }

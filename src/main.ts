@@ -1,4 +1,5 @@
 import { Kmath } from "./Kmath/Kmath"
+import { Kcommon } from "./Kcommon/Kcommon"
 //import { Kcommon } from "./Kcommon/Kcommon"
 
 declare global {
@@ -7,3 +8,4 @@ declare global {
 
 window.Ktools = window.Ktools || {};
 window.Ktools.Kmath = Kmath;
+window.Ktools.Kcommon = Kcommon

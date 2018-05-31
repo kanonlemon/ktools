@@ -5,7 +5,7 @@
 *	Some computation utils  
 *  
 */
-import { Kcommon } from "../Kcommon/Kcommon"
+import { Kcommon } from "../Kcommon/Kbase"
 
 namespace Kmath {
 

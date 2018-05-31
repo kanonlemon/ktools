@@ -71,10 +71,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/Kcommon/Kcommon.ts":
-/*!********************************!*\
-  !*** ./src/Kcommon/Kcommon.ts ***!
-  \********************************/
+/***/ "./src/Kcommon/Kbase.ts":
+/*!******************************!*\
+  !*** ./src/Kcommon/Kbase.ts ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -103,18 +103,33 @@ var Kcommon;
             }
             return repeat;
         }
+        static rshift(array, offset) {
+            let length = array.length;
+            let rshifted = [];
+            for (let i = 0; i < length; i++) {
+                if (((i - offset) > length) || ((i - offset) < 0)) {
+                    rshifted.push(NaN);
+                }
+                else {
+                    rshifted.push(array[i - offset]);
+                }
+            }
+            return rshifted;
+        }
     }
     Kcommon.Kbase = Kbase;
 })(Kcommon || (Kcommon = {}));
 exports.Kcommon = Kcommon;
+//test code
+console.log(Kcommon.Kbase.rshift([1, 2, 3, 4], 3));
 
 
 /***/ }),
 
-/***/ "./src/Kmath/Kmath.ts":
-/*!****************************!*\
-  !*** ./src/Kmath/Kmath.ts ***!
-  \****************************/
+/***/ "./src/Kmath/Karray.ts":
+/*!*****************************!*\
+  !*** ./src/Kmath/Karray.ts ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -128,7 +143,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 *	Some computation utils
 *
 */
-const Kcommon_1 = __webpack_require__(/*! ../Kcommon/Kcommon */ "./src/Kcommon/Kcommon.ts");
+const Kbase_1 = __webpack_require__(/*! ../Kcommon/Kbase */ "./src/Kcommon/Kbase.ts");
 var Kmath;
 (function (Kmath) {
     class Karray {
@@ -185,7 +200,7 @@ var Kmath;
         // output   : [3,6,9,20,40,54]
         static add(array1, array2) {
             if (!Array.isArray(array2)) {
-                array2 = Kcommon_1.Kcommon.Kbase.repeat(array2, array1.length);
+                array2 = Kbase_1.Kcommon.Kbase.repeat(array2, array1.length);
             }
             let add = [];
             if (array1.length === array2.length) {
@@ -210,7 +225,7 @@ var Kmath;
         // output   : [2,2,2,4,7,8]
         static div(array1, array2) {
             if (!Array.isArray(array2)) {
-                array2 = Kcommon_1.Kcommon.Kbase.repeat(array2, array1.length);
+                array2 = Kbase_1.Kcommon.Kbase.repeat(array2, array1.length);
             }
             let div = [];
             if (array1.length === array2.length) {
@@ -248,10 +263,11 @@ exports.Kmath = Kmath;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const Kmath_1 = __webpack_require__(/*! ./Kmath/Kmath */ "./src/Kmath/Kmath.ts");
+const Karray_1 = __webpack_require__(/*! ./Kmath/Karray */ "./src/Kmath/Karray.ts");
+const Kbase_1 = __webpack_require__(/*! ./Kcommon/Kbase */ "./src/Kcommon/Kbase.ts");
 window.Ktools = window.Ktools || {};
-window.Ktools.Kmath = Kmath_1.Kmath;
-console.log(Kmath_1.Kmath.Karray.add([1, 2, 3, 4], 10));
+window.Ktools.Kmath = Karray_1.Kmath;
+window.Ktools.Kcommon = Kbase_1.Kcommon;
 
 
 /***/ })

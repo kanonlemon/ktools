@@ -1,5 +1,5 @@
-import { Kmath } from "./Kmath/Kmath"
-import { Kcommon } from "./Kcommon/Kcommon"
+import { Kmath } from "./Kmath/Karray"
+import { Kcommon } from "./Kcommon/Kbase"
 //import { Kcommon } from "./Kcommon/Kcommon"
 
 declare global {

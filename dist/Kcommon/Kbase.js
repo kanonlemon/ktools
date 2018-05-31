@@ -40,5 +40,5 @@ var Kcommon;
 })(Kcommon || (Kcommon = {}));
 exports.Kcommon = Kcommon;
 //test code
-console.log(Kcommon.Kbase.rshift([1, 2, 3, 4], -1));
-//# sourceMappingURL=Kcommon.js.map
+console.log(Kcommon.Kbase.rshift([1, 2, 3, 4], 3));
+//# sourceMappingURL=Kbase.js.map

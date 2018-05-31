@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 *	Some computation utils
 *
 */
-const Kcommon_1 = require("../Kcommon/Kcommon");
+const Kbase_1 = require("../Kcommon/Kbase");
 var Kmath;
 (function (Kmath) {
     class Karray {
@@ -64,7 +64,7 @@ var Kmath;
         // output   : [3,6,9,20,40,54]
         static add(array1, array2) {
             if (!Array.isArray(array2)) {
-                array2 = Kcommon_1.Kcommon.Kbase.repeat(array2, array1.length);
+                array2 = Kbase_1.Kcommon.Kbase.repeat(array2, array1.length);
             }
             let add = [];
             if (array1.length === array2.length) {
@@ -89,7 +89,7 @@ var Kmath;
         // output   : [2,2,2,4,7,8]
         static div(array1, array2) {
             if (!Array.isArray(array2)) {
-                array2 = Kcommon_1.Kcommon.Kbase.repeat(array2, array1.length);
+                array2 = Kbase_1.Kcommon.Kbase.repeat(array2, array1.length);
             }
             let div = [];
             if (array1.length === array2.length) {
@@ -113,4 +113,4 @@ var Kmath;
     Kmath.Karray = Karray;
 })(Kmath || (Kmath = {}));
 exports.Kmath = Kmath;
-//# sourceMappingURL=Kmath.js.map
+//# sourceMappingURL=Karray.js.map

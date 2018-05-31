@@ -220,6 +220,56 @@ var Kmath;
             }
             return add;
         }
+        // sub
+        // input    : [2,4,6,16,35,48],[1,2,3,4,5,6]
+        // output   : [1,2,3,12,30,42]
+        static sub(array1, array2) {
+            if (!Array.isArray(array2)) {
+                array2 = Kbase_1.Kcommon.Kbase.repeat(array2, array1.length);
+            }
+            let sub = [];
+            if (array1.length === array2.length) {
+                //add only when two arraies have the save length
+                for (let i = 0; i < array1.length; i++) {
+                    if (array2[i] === undefined || isNaN(array2[i]) || array1[i] === undefined || isNaN(array1[i])) {
+                        //illegal oprand check
+                        sub.push(NaN);
+                    }
+                    else {
+                        sub.push(array1[i] - array2[i]);
+                    }
+                }
+            }
+            else {
+                throw new DOMException("must have the same length");
+            }
+            return sub;
+        }
+        // multiply
+        // input    : [2,4,6,16,35,48],[1,2,3,4,5,6]
+        // output   : [2, 8, 18, 64, 175, 288]
+        static mul(array1, array2) {
+            if (!Array.isArray(array2)) {
+                array2 = Kbase_1.Kcommon.Kbase.repeat(array2, array1.length);
+            }
+            let mul = [];
+            if (array1.length === array2.length) {
+                //div only when two arraies have the save length
+                for (let i = 0; i < array1.length; i++) {
+                    if (array2[i] === undefined || isNaN(array2[i]) || array2[i] === 0 || array1[i] === undefined || isNaN(array1[i])) {
+                        //illegal oprand check
+                        mul.push(NaN);
+                    }
+                    else {
+                        mul.push(array1[i] * array2[i]);
+                    }
+                }
+            }
+            else {
+                throw new DOMException("must have the same length");
+            }
+            return mul;
+        }
         // divide
         // input    : [2,4,6,16,35,48],[1,2,3,4,5,6]
         // output   : [2,2,2,4,7,8]
@@ -249,6 +299,7 @@ var Kmath;
     Kmath.Karray = Karray;
 })(Kmath || (Kmath = {}));
 exports.Kmath = Kmath;
+console.log(Kmath.Karray.sub([2, 4, 6, 16, 35, 48], [1, 2, 3, 4, 5, 6]));
 
 
 /***/ }),

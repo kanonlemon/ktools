@@ -85,7 +85,7 @@ namespace Kmath {
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return add;
         }
@@ -113,7 +113,7 @@ namespace Kmath {
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return sub;
         }
@@ -140,7 +140,7 @@ namespace Kmath {
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return mul;
         }
@@ -168,7 +168,7 @@ namespace Kmath {
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return div;
         }
@@ -176,7 +176,6 @@ namespace Kmath {
     }
 }
 
-console.log(Kmath.Karray.sub([2,4,6,16,35,48],[1,2,3,4,5,6]))
 
 export { Kmath };
 

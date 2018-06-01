@@ -9,6 +9,7 @@
   "author": "kanon",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^10.3.0",
     "awesome-typescript-loader": "^5.0.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^7.1.4",
@@ -28,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/kanonlemon/ktools/issues"
   },
-  "homepage": "https://github.com/kanonlemon/ktools#readme"
+  "homepage": "https://github.com/kanonlemon/ktools#readme",
+  "dependencies": {
+    "date-and-time": "^0.6.2"
+  }
 }

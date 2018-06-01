@@ -216,7 +216,7 @@ var Kmath;
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return add;
         }
@@ -241,7 +241,7 @@ var Kmath;
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return sub;
         }
@@ -266,7 +266,7 @@ var Kmath;
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return mul;
         }
@@ -291,7 +291,7 @@ var Kmath;
                 }
             }
             else {
-                throw new DOMException("must have the same length");
+                throw new Error("must have the same length");
             }
             return div;
         }
@@ -299,7 +299,6 @@ var Kmath;
     Kmath.Karray = Karray;
 })(Kmath || (Kmath = {}));
 exports.Kmath = Kmath;
-console.log(Kmath.Karray.sub([2, 4, 6, 16, 35, 48], [1, 2, 3, 4, 5, 6]));
 
 
 /***/ }),

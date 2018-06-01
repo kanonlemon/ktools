@@ -1,7 +1,7 @@
 const path = require('path');
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'src', 'main.ts'),
+  entry: path.join(__dirname, 'src', 'global.ts'),
   output: {
     filename: 'ktools.js',
     path: path.resolve(__dirname, 'dist')

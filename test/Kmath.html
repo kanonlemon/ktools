@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ktools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../dist/ktools.js"></script>
+    <script src="../dist/ktools.js?v=111"></script>
 </head>
 
 <body>
@@ -14,8 +14,8 @@
         <code>
             [1 ,2, 3, 4] * 10
             <script type="text/javascript">
-                window.kmath = Kmath;
-                console.log(kmath.add([1, 2, 3, 4], 10))
+                kdatetime = Ktools.Kcommon.Kdatetime
+                console.log(kdatetime.generate_series('20170101', '20170501','1 day', 'YYYYMMDD'))
             </script>
         </code>
     </pre>

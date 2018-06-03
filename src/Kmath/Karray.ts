@@ -173,6 +173,34 @@ export class Karray {
         return div;
     }
 
+
+    // return the position number in the array, which sort asc
+    static select(array: Array<number>, position: number ): number{
+        console.log(array, position);
+        if( position < 0 || position > array.length){
+            throw new Error("Wrong position number of this array, Must in 1..length(array)");
+        }
+        //random divide index
+        let divide : number = Math.floor( Math.random() * array.length ); 
+        //find less than
+        let less: Array<number> = array.filter( x => x < array[divide] );
+        //console.log("[LESS]", less);
+        //find equls
+        let equal: Array<number> = array.filter(x => x == array[divide]);
+        //console.log("[EQUAL]", equal);
+        if(less.length > position){
+            return this.select(less, position);
+        }
+        else if( less.length + equal.length > position){
+            return array[divide]
+        }
+        else{
+            let greater : Array<number> = array.filter( x=> x > array[divide]);
+            //console.log("[GREATER]", greater);
+            return this.select( equal.concat(greater), position - less.length);
+        }
+    }
+
 }
 
-console.log( Karray.add( [1, 2, 3, 4, 5], 10))
+console.log(Karray.select([1, 10, 4, 5, 5, 5], 5 ))

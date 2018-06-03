@@ -1,4 +1,4 @@
-import { Kcommon } from "./Kcommon/Kcommo";
+import { Kcommon } from "./Kcommon/Kcommon";
 import { Kmath } from "./Kmath/Kmath";
 
 

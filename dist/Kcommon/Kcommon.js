@@ -7,4 +7,4 @@ class Kcommon {
 Kcommon.Kbase = Kbase_1.Kbase;
 Kcommon.Kdatetime = Kdatetime_1.Kdatetime;
 exports.Kcommon = Kcommon;
-//# sourceMappingURL=Kcommo.js.map
+//# sourceMappingURL=Kcommon.js.map

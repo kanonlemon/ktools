@@ -2213,10 +2213,10 @@ exports.Kbase = Kbase;
 
 /***/ }),
 
-/***/ "./src/Kcommon/Kcommo.ts":
-/*!*******************************!*\
-  !*** ./src/Kcommon/Kcommo.ts ***!
-  \*******************************/
+/***/ "./src/Kcommon/Kcommon.ts":
+/*!********************************!*\
+  !*** ./src/Kcommon/Kcommon.ts ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2476,9 +2476,35 @@ class Karray {
         }
         return div;
     }
+    // return the position number in the array, which sort asc
+    static select(array, position) {
+        console.log(array, position);
+        if (position < 0 || position > array.length) {
+            throw new Error("Wrong position number of this array, Must in 1..length(array)");
+        }
+        //random divide index
+        let divide = Math.floor(Math.random() * array.length);
+        //find less than
+        let less = array.filter(x => x < array[divide]);
+        //console.log("[LESS]", less);
+        //find equls
+        let equal = array.filter(x => x == array[divide]);
+        //console.log("[EQUAL]", equal);
+        if (less.length > position) {
+            return this.select(less, position);
+        }
+        else if (less.length + equal.length > position) {
+            return array[divide];
+        }
+        else {
+            let greater = array.filter(x => x > array[divide]);
+            //console.log("[GREATER]", greater);
+            return this.select(equal.concat(greater), position - less.length);
+        }
+    }
 }
 exports.Karray = Karray;
-console.log(Karray.add([1, 2, 3, 4, 5], 10));
+console.log(Karray.select([1, 10, 4, 5, 5, 5], 5));
 
 
 /***/ }),
@@ -2512,10 +2538,10 @@ exports.Kmath = Kmath;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const Kcommo_1 = __webpack_require__(/*! ./Kcommon/Kcommo */ "./src/Kcommon/Kcommo.ts");
+const Kcommon_1 = __webpack_require__(/*! ./Kcommon/Kcommon */ "./src/Kcommon/Kcommon.ts");
 const Kmath_1 = __webpack_require__(/*! ./Kmath/Kmath */ "./src/Kmath/Kmath.ts");
 window.Ktools = {
-    Kcommon: Kcommo_1.Kcommon,
+    Kcommon: Kcommon_1.Kcommon,
     Kmath: Kmath_1.Kmath
 };
 

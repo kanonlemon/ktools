@@ -202,5 +202,3 @@ export class Karray {
     }
 
 }
-
-console.log(Karray.select([1, 10, 4, 5, 5, 5], 5 ))
